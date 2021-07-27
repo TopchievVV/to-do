@@ -51,7 +51,7 @@ render = () => {
     const checkbox = document.createElement(`input`);
     checkbox.type = `checkbox`;
     checkbox.checked = item.isCheck;
-    checkbox.onchange = CheckboxPozition = () => {
+    checkbox.onchange = CheckBoxPozition = () => {
       onChangeCheckbox(index);
     };
     container.appendChild(checkbox);
