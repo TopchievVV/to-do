@@ -17,7 +17,7 @@ let valueInput = ``;
 let input = null;
 let activeEditTask = null;
 
-window.onload = function init() {
+window.onload = functionInit = () => {
   input = document.getElementById(`vvod`);
   input.addEventListener(`change`, updateValue);
   render();
@@ -51,7 +51,7 @@ render = () => {
     const checkbox = document.createElement(`input`);
     checkbox.type = `checkbox`;
     checkbox.checked = item.isCheck;
-    checkbox.onchange = function () {
+    checkbox.onchange = tFunction = () => {
       onChangeCheckbox(index);
     };
     container.appendChild(checkbox);
