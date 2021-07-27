@@ -17,14 +17,14 @@ let valueInput = ``;
 let input = null;
 let activeEditTask = null;
 
-window.onload = functionInit = () => {
+window.onload = FunctionInit = () => {
   input = document.getElementById(`vvod`);
-  input.addEventListener(`change`, updateValue);
+  input.addEventListener(`change`, UpdateValue);
   render();
   
 }
 
-onClickButton = () => {
+OnClickButton = () => {
   allTask.push({
     text: valueInput,
     isChek: false
@@ -35,7 +35,7 @@ onClickButton = () => {
   render();
 }
 
-updateValue = (event) => {
+UpdateValue = (event) => {
   valueInput = event.target.value;
 }
 
@@ -52,7 +52,7 @@ render = () => {
     checkbox.type = `checkbox`;
     checkbox.checked = item.isCheck;
     checkbox.onchange = CheckBoxPozition = () => {
-      onChangeCheckbox(index);
+      OnChangeCheckbox(index);
     };
     container.appendChild(checkbox);
 
@@ -60,14 +60,14 @@ render = () => {
       const inputTask = document.createElement(`input`);
       inputTask.type = `text`;
       inputTask.value = item.text;
-      inputTask.addEventListener(`change`, updateTaskText);
-      inputTask.addEventListener(`blur`, doneEditTask);
+      inputTask.addEventListener(`change`, UpdateTaskText);
+      inputTask.addEventListener(`blur`, DoneEditTask);
       container.appendChild(inputTask);
       const imageDone = document.createElement(`img`);
       imageDone.src = `pikcha3.png`;
       imageDone.className = `pikcha`;
       imageDone.onclick = TaskСondition = () => {
-        doneEditTask();
+        DoneEditTask();
       };
       container.appendChild(imageDone);
     } else { // если не редактируем сейчас эту таску
@@ -79,7 +79,7 @@ render = () => {
       imageEdit.src = `pikcha1.png`;
       imageEdit.className = `pikcha`;
       imageEdit.onclick = TaskEdit = () => {
-        startEditTask(index);
+        StartEditTask(index);
       };
       container.appendChild(imageEdit);
     }
@@ -87,7 +87,7 @@ render = () => {
     imageDelete.src = `pikcha2.png`;
     imageDelete.className = `pikcha`;
     imageDelete.onclick = TaskDelete = () => {
-      onDeleteTask(index);
+      OnDeleteTask(index);
     }
     container.appendChild(imageDelete);
 
@@ -95,35 +95,35 @@ render = () => {
   });
 }
 
-onChangeCheckbox = (index) => {
+OnChangeCheckbox = (index) => {
   allTask[index].isCheck = !allTask[index].isCheck;
   localStorage.setItem(`task`, JSON.stringify(allTask));
   render();
 }
 
-onDeleteTask = (index) => {
+OnDeleteTask = (index) => {
   allTask.splice(index, 1);
   localStorage.setItem(`task`, JSON.stringify(allTask));
   render();
 }
 
-updateTaskText = (event) => {
+UpdateTaskText = (event) => {
   allTask[activeEditTask].text = event.target.value;
   localStorage.setItem(`task`, JSON.stringify(allTask));
   render();
 }
 
-startEditTask = (index) => {
+StartEditTask = (index) => {
   activeEditTask = index;
   render();
 }
 
-doneEditTask = () => {
+DoneEditTask = () => {
   activeEditTask = null;
   render();
 }
 
-clearStorage = () => {
+ClearStorage = () => {
   localStorage.clear();
   
   render();
