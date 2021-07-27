@@ -51,7 +51,7 @@ render = () => {
     const checkbox = document.createElement(`input`);
     checkbox.type = `checkbox`;
     checkbox.checked = item.isCheck;
-    checkbox.onchange = CheckboxFunction = () => {
+    checkbox.onchange = CheckboxPozition = () => {
       onChangeCheckbox(index);
     };
     container.appendChild(checkbox);
@@ -66,7 +66,7 @@ render = () => {
       const imageDone = document.createElement(`img`);
       imageDone.src = `pikcha3.png`;
       imageDone.className = `pikcha`;
-      imageDone.onclick = functionTask = () => {
+      imageDone.onclick = TaskСondition = () => {
         doneEditTask();
       };
       container.appendChild(imageDone);
@@ -78,7 +78,7 @@ render = () => {
       const imageEdit = document.createElement(`img`)
       imageEdit.src = `pikcha1.png`;
       imageEdit.className = `pikcha`;
-      imageEdit.onclick = functionTask = () => {
+      imageEdit.onclick = TaskEdit = () => {
         startEditTask(index);
       };
       container.appendChild(imageEdit);
@@ -86,7 +86,7 @@ render = () => {
     const imageDelete = document.createElement(`img`);
     imageDelete.src = `pikcha2.png`;
     imageDelete.className = `pikcha`;
-    imageDelete.onclick = function () {
+    imageDelete.onclick = TaskDelete = () => {
       onDeleteTask(index);
     }
     container.appendChild(imageDelete);
