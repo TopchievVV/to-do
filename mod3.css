@@ -1,0 +1,26 @@
+.to-do{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-container{
+  display: flex;
+  align-items: center;
+}
+
+
+.text-task{
+  font-size: 18px;
+  color: black;
+}
+
+.done-text {
+  color: rgba(0, 0, 0, 0.3);
+  text-decoration: line-through;
+}
+
+.pikcha{
+  width: 12px;
+  height: 12px;
+}
